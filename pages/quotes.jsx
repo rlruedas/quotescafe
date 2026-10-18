@@ -71,8 +71,8 @@ function Quotes() {
         <Header />
         <Menu setCategory={set} />
 
-        <main className="flex-1 w-full max-w-7xl 3xl:max-w-[1700px] 4k:max-w-[2100px] mx-auto flex items-center justify-center px-3 sm:px-6 2xl:px-8 py-1 sm:py-2 2xl:py-4 overflow-hidden">
-          <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-6 xl:gap-8 2xl:gap-12 3xl:gap-16 quote-container">
+        <main className="flex-1 w-full max-w-6xl xl:max-w-7xl 2xl:max-w-[1500px] 3xl:max-w-[1700px] 4k:max-w-[2100px] mx-auto flex items-center justify-center px-4 sm:px-6 2xl:px-8 py-2">
+          <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-5 xl:gap-7 2xl:gap-10 3xl:gap-14">
             <Guide setCategory={set} />
             <Content filter={category} modal={openModal} />
             <SocialMedia />

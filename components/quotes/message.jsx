@@ -50,7 +50,7 @@ function Message(props) {
         {/* Quote Card (Captured for Export) */}
         <section
           id="message"
-          className="relative w-[260px] xs:w-[285px] sm:w-[320px] md:w-[340px] lg:w-[330px] xl:w-[370px] 2xl:w-[430px] 3xl:w-[480px] h-[340px] xs:h-[370px] sm:h-[415px] md:h-[440px] lg:h-[425px] xl:h-[475px] 2xl:h-[550px] 3xl:h-[610px] rounded-2xl 2xl:rounded-3xl overflow-hidden shadow-xl shadow-[#34180b]/15 border border-[#855D49]/20 flex flex-col justify-between p-5 xs:p-6 sm:p-7 xl:p-8 2xl:p-10 bg-[#f4ebe1] select-none shrink-0"
+          className="relative w-[260px] xs:w-[285px] sm:w-[320px] lg:w-[310px] xl:w-[340px] 2xl:w-[380px] 3xl:w-[430px] h-[340px] xs:h-[370px] sm:h-[415px] lg:h-[400px] xl:h-[440px] 2xl:h-[490px] 3xl:h-[550px] rounded-2xl 2xl:rounded-3xl overflow-hidden shadow-xl shadow-[#34180b]/15 border border-[#855D49]/20 flex flex-col justify-between p-5 xs:p-6 sm:p-7 xl:p-8 2xl:p-9 bg-[#f4ebe1] select-none shrink-0"
         >
           {/* Background Texture */}
           <img
