@@ -1,20 +1,19 @@
 import React from "react";
+import { useRouter } from "next/router";
 
 import Header from "../components/header/header";
 import Footer from "../components/footer";
 import Menu from "../components/menu";
 
 function Landing() {
-
   return (
     <>
-        
-      <div className="relative w-full min-h-screen !overflow-clip bg-[url('/coffee-bg.webp')] text-[#855D49] bg-no-repeat bg-center bg-cover font-Swanky">
+      <div className="relative w-full min-h-screen !overflow-clip bg-[url('/coffee-bg.webp')] text-[#4a2e22] bg-no-repeat bg-center bg-cover font-Swanky">
         <Header />
         <Menu />
-        <div className="w-full flex justify-center items-center bg-transparent pt-[3em]">
-          <h1 className="w-[80vw] md:w-[70vw] lg:w-[50vw] text-[24px] lg:text-[40px]  text-center">
-            &quot;COLLECTIONS OF ENCOURAGING QUOTES TO KEEP YOU GET GOING!&quot;
+        <div className="w-full flex justify-center items-center bg-transparent pt-[2.5em] sm:pt-[3em] px-4">
+          <h1 className="w-[85vw] md:w-[70vw] lg:w-[50vw] text-[24px] md:text-[32px] lg:text-[38px] text-center text-[#3e2415] leading-relaxed tracking-wide">
+            &quot;COLLECTIONS OF ENCOURAGING QUOTES TO KEEP YOU GOING!&quot;
           </h1>
         </div>
         <Footer />

@@ -8,6 +8,7 @@ function Header() {
   const [active, setActive] = useState(false);
   const { width } = useWindowDimension();
   const router = useRouter();
+  const isHome = router.pathname === "/";
 
   const handleMenu = (e) => {
     e.preventDefault();
@@ -25,23 +26,35 @@ function Header() {
   return (
     <>
       {width >= 1024 ? (
-        <>
-          <div className="sticky top-0 flex flex-row w-full h-[4em] justify-center items-center space-x-[8em] font-Swanky text-[#855D49] backdrop-blur-sm z-50">
+        <header
+          className={`sticky top-0 w-full h-[4em] z-50 transition-all flex items-center justify-center ${
+            isHome
+              ? "bg-transparent backdrop-blur-[2px] border-b border-transparent text-[#4a2e22]"
+              : "bg-[#e5d0b3]/75 backdrop-blur-md border-b border-[#855D49]/10 text-[#855D49]"
+          }`}
+        >
+          <div className="w-full max-w-5xl mx-auto px-6 sm:px-8 flex flex-row items-center justify-between">
             <button
               onClick={() => router.push("/")}
-              className="text-[28px] whitespace-nowrap z-0"
+              className="font-Swanky text-[28px] text-[#3e2415] hover:opacity-85 transition-opacity whitespace-nowrap cursor-pointer"
             >
               &quot;Quotes Cafe&quot; ☕
             </button>
             <DesktopNavBar />
           </div>
-        </>
+        </header>
       ) : (
         <>
-          <div className="sticky top-0 flex flex-row w-full h-[10vh] justify-around overflow-hidden items-center font-Swanky text-[#855D49] z-50">
+          <div
+            className={`sticky top-0 flex flex-row w-full h-[10vh] justify-around overflow-hidden items-center z-50 transition-all ${
+              isHome
+                ? "bg-transparent text-[#4a2e22]"
+                : "backdrop-blur-md bg-[#e5d0b3]/80 border-b border-[#855D49]/10 text-[#855D49]"
+            }`}
+          >
             <button
               onClick={() => router.push("/")}
-              className="text-[28px] whitespace-nowrap"
+              className="font-Swanky text-[26px] text-[#3e2415] whitespace-nowrap"
             >
               &quot;Quotes Cafe&quot; ☕
             </button>
