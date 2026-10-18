@@ -33,7 +33,14 @@ function Message(props) {
   const currentAuthor = message?.author || "Quotes Cafe";
 
   return (
-    <div className="flex flex-col items-center gap-2 xl:gap-3 2xl:gap-4">
+    <div className="flex flex-col items-center gap-2 xl:gap-2.5 2xl:gap-3.5">
+      {/* Paper Style Indicator on Top */}
+      <div className="flex items-center justify-center">
+        <span className="px-3 py-0.5 sm:py-1 2xl:px-4 2xl:py-1.5 rounded-full bg-[#855D49]/15 text-[#55321f] font-semibold text-[10.5px] sm:text-[11.5px] xl:text-[12px] 2xl:text-[13.5px] uppercase tracking-wider">
+          Paper {countBG + 1} / {bgimg.length}
+        </span>
+      </div>
+
       <div className="relative flex items-center justify-center gap-2 sm:gap-3 xl:gap-4 2xl:gap-6">
         {/* Previous Paper Button */}
         <button
@@ -97,12 +104,8 @@ function Message(props) {
         </button>
       </div>
 
-      {/* Card Utility Toolbar */}
-      <div className="flex items-center gap-2 xl:gap-3 2xl:gap-4 font-sans text-[11.5px] sm:text-[12px] xl:text-[13px] 2xl:text-[15px]">
-        <span className="px-2.5 py-1 2xl:px-3.5 2xl:py-1.5 rounded-full bg-[#855D49]/10 text-[#634534] font-medium text-[10.5px] sm:text-[11px] xl:text-[12px] 2xl:text-[13px] uppercase tracking-wider">
-          Paper {countBG + 1} / {bgimg.length}
-        </span>
-
+      {/* Centered Card Actions: Copy Quote & Save as Image */}
+      <div className="flex items-center justify-center gap-2 sm:gap-2.5 xl:gap-3 font-sans text-[11.5px] sm:text-[12px] xl:text-[13px] 2xl:text-[14.5px]">
         <button
           onClick={handleCopy}
           className="flex items-center gap-1.5 px-3 py-1 2xl:px-4 2xl:py-1.5 rounded-full bg-[#855D49]/10 hover:bg-[#855D49]/20 text-[#4a2e22] font-medium border border-[#855D49]/15 transition-all cursor-pointer"
