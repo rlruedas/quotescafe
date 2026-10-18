@@ -31,7 +31,7 @@ function Category(props) {
           <button
             onClick={() => handleCategory(item, index)}
             key={index}
-            className={`text-[12px] tracking-wide px-2.5 py-1 rounded-full capitalize transition-all duration-200 cursor-pointer ${
+            className={`text-[12px] 2xl:text-[13.5px] tracking-wide px-2.5 py-1 2xl:px-3 2xl:py-1.5 rounded-full capitalize transition-all duration-200 cursor-pointer ${
               isSelected
                 ? "bg-[#4a2e22] text-[#f7eee2] shadow-sm font-semibold scale-[1.02]"
                 : "bg-[#855D49]/10 text-[#5c3c2b] hover:bg-[#855D49]/20 hover:text-[#2b170c] border border-[#855D49]/15 font-medium"
