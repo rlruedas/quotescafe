@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 import { IoShareSocialSharp, IoCopyOutline, IoCheckmark } from "react-icons/io5";
 
@@ -17,6 +17,14 @@ function Message(props) {
     { link: "/quotebackgrounds/webp/paper-6.webp" },
     { link: "/quotebackgrounds/webp/paper-7.webp" },
   ];
+
+  // Preload all background textures on mount so switching is instant
+  useEffect(() => {
+    bgimg.forEach((item) => {
+      const img = new Image();
+      img.src = item.link;
+    });
+  }, []);
 
   const handleCopy = () => {
     if (!message?.content) return;
@@ -59,12 +67,18 @@ function Message(props) {
           id="message"
           className="relative w-[260px] xs:w-[285px] sm:w-[320px] lg:w-[310px] xl:w-[340px] 2xl:w-[380px] 3xl:w-[430px] h-[340px] xs:h-[370px] sm:h-[415px] lg:h-[400px] xl:h-[440px] 2xl:h-[490px] 3xl:h-[550px] rounded-2xl 2xl:rounded-3xl overflow-hidden shadow-xl shadow-[#34180b]/15 border border-[#855D49]/20 flex flex-col justify-between p-5 xs:p-6 sm:p-7 xl:p-8 2xl:p-9 bg-[#f4ebe1] select-none shrink-0"
         >
-          {/* Background Texture */}
-          <img
-            src={bgimg[countBG]?.link}
-            alt="Quote Background"
-            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          />
+          {/* Pre-rendered Background Textures for Instant Smooth Transitions */}
+          {bgimg.map((bg, idx) => (
+            <img
+              key={bg.link}
+              src={bg.link}
+              alt="Quote Background"
+              loading="eager"
+              className={`absolute inset-0 w-full h-full object-cover pointer-events-none transition-opacity duration-300 ease-in-out ${
+                idx === countBG ? "opacity-100 z-0" : "opacity-0 -z-10"
+              }`}
+            />
+          ))}
 
           {/* Invisible spacer so flex-col justify-between balances the quote in center */}
           <div className="relative z-10 h-2"></div>
